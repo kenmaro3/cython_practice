@@ -12,3 +12,8 @@ cdef class TestClass1Cython:
 
     def test_function1_cython(self):
         self.ptr.test_function1()
+    
+    @staticmethod
+    def gmp_print_test():
+        cdef TestClass1 testclass1
+        testclass1.gmp_print_test()
