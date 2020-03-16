@@ -17,3 +17,18 @@ cdef class TestClass1Cython:
     def gmp_print_test():
         cdef TestClass1 testclass1
         testclass1.gmp_print_test()
+
+    @staticmethod
+    def test_sum(int x, int y):
+        cdef TestClass1 testclass1
+        return testclass1.test_sum(x, y)
+
+    @staticmethod
+    def test_sum_double(float x, float y):
+        cdef TestClass1 testclass1
+        return testclass1.test_sum_double(x, y)
+
+    @staticmethod
+    def test_vector_int(list x, int y):
+        cdef TestClass1 testclass1
+        return testclass1.test_vector_int(x,y)
