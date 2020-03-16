@@ -1,6 +1,8 @@
 import cython
 cimport cython
 
+from test_class2 cimport *
+
 cdef class TestClass1Cython:
     cdef TestClass1* ptr
 
@@ -32,3 +34,13 @@ cdef class TestClass1Cython:
     def test_vector_int(list x, int y):
         cdef TestClass1 testclass1
         return testclass1.test_vector_int(x,y)
+
+    def get_property_test_class2(self):
+        cdef:
+            TestClass2 cpp_test_class2
+        
+        test_class2 = TestClass2Cython()
+        cpp_test_class2 = self.ptr.get_property_test_class2()
+        test_class2.ptr[0] = cpp_test_class2
+        return test_class2
+

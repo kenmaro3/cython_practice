@@ -1,10 +1,18 @@
+#pragma once
 #include <iostream>
 #include "TestClass1.h"
 using namespace std;
 
 namespace my_library{
 
-TestClass1::TestClass1(){};
+TestClass1::TestClass1(){
+    this->property_test_class2 = TestClass2();
+}
+
+TestClass1::TestClass1(TestClass2 test_class2){
+    this->property_test_class2 = test_class2;
+}
+
 void TestClass1::test_function1(){
     cout << "printed from cpp function" << endl;
 }
@@ -31,6 +39,14 @@ vector<int> TestClass1::test_vector_int(vector<int> x, int y){
     }
 
     return result;
+}
+
+TestClass2 TestClass1::get_property_test_class2(){
+    return this->property_test_class2;
+}
+
+void TestClass1::set_property_test_class2(TestClass2 test_class2){
+    this->property_test_class2 = test_class2;
 }
 
 }

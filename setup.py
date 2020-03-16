@@ -6,7 +6,8 @@ from distutils import sysconfig
 ext_modules = [
    Extension(
 	"my_library", sources=["./cython/my_library.pyx",
-           "./cpp_library/TestClass1.cpp"
+           "./cpp_library/TestClass1.cpp",
+           "./cpp_library/TestClass2.cpp"
                        ],
            libraries=["gmp"],
            library_dirs=["/usr/local/lib", "/usr/local/gmp/6_1_2/lib"],
